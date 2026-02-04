@@ -2,59 +2,61 @@
 Constantes del juego
 """
 
-# Colores del tema
+# Colores del tema - Paleta más amigable y moderna
 COLORS = {
-    'bg_main': '#1a0b2e',
-    'bg_secondary': '#2d1b4e',
-    'purple_light': '#e0b0ff',
-    'purple_mid': '#b19cd9',
-    'purple_dark': '#7b2cbf',
-    'purple_active': '#9d4edd',
-    'purple_card': '#5b21b6',
-    'purple_border': '#7c3aed',
-    'red_card': '#dc2626',
-    'green_highlight': '#10b981',
-    'green_dark': '#059669',
-    'blue_button': '#3b82f6',
-    'blue_active': '#2563eb',
-    'gold': '#fbbf24'
+    'bg_main': '#0f172a',           # Azul oscuro profundo
+    'bg_secondary': '#1e293b',      # Azul grisáceo
+    'bg_card': '#334155',           # Gris azulado
+    'accent_primary': '#3b82f6',    # Azul brillante
+    'accent_secondary': '#8b5cf6',  # Púrpura
+    'accent_gold': '#fbbf24',       # Dorado
+    'text_primary': '#f1f5f9',      # Blanco suave
+    'text_secondary': '#94a3b8',    # Gris claro
+    'red_card': '#ef4444',          # Rojo para cartas
+    'green_highlight': '#10b981',   # Verde para resaltado
+    'green_dark': '#059669',        # Verde oscuro
+    'card_back': '#6366f1',         # Índigo para reverso
+    'card_back_accent': '#a78bfa',  # Púrpura claro
+    'hand_bg': '#1e293b'            # Fondo para carta en mano
 }
 
 # Posiciones de las pilas en el canvas (x, y)
-# Organizadas en cuadrado con sentido horario + centro
-# Esquema:
-#   0   1   2   3
-# 11            4
-# 10     12     5
-#  9            6
-#   8   7   6   5
-
+# Organizadas en un diseño más compacto y balanceado
+# Calculadas para que todas las pilas con 4 cartas apiladas quepan completamente
 PILE_POSITIONS = [
-    (250, 180),   # 0 - esquina superior izquierda
-    (450, 180),   # 1 - superior izquierda-centro
-    (650, 180),   # 2 - superior derecha-centro
-    (850, 180),   # 3 - esquina superior derecha
-    (850, 350),   # 4 - derecha superior
-    (850, 520),   # 5 - derecha inferior
-    (850, 690),   # 6 - esquina inferior derecha
-    (650, 690),   # 7 - inferior derecha-centro
-    (450, 690),   # 8 - inferior izquierda-centro
-    (250, 690),   # 9 - esquina inferior izquierda
-    (250, 520),   # 10 - izquierda inferior
-    (250, 350),   # 11 - izquierda superior
-    (550, 435)    # 12 - centro (pila 13)
+    (120, 150),   # 0 - esquina superior izquierda
+    (270, 150),   # 1 - superior
+    (420, 150),   # 2 - superior
+    (570, 150),   # 3 - esquina superior derecha
+    (570, 320),   # 4 - derecha
+    (570, 490),   # 5 - derecha
+    (570, 660),   # 6 - esquina inferior derecha (ajustado)
+    (420, 660),   # 7 - inferior (ajustado)
+    (270, 660),   # 8 - inferior (ajustado)
+    (120, 660),   # 9 - esquina inferior izquierda (ajustado)
+    (120, 490),   # 10 - izquierda
+    (120, 320),   # 11 - izquierda
+    (345, 405)    # 12 - centro
 ]
 
 # Dimensiones de las cartas y ventana
-CARD_WIDTH = 80
-CARD_HEIGHT = 110
-WINDOW_WIDTH = 1100
-WINDOW_HEIGHT = 900
+CARD_WIDTH = 70
+CARD_HEIGHT = 100
+WINDOW_WIDTH = 1400  # Aumentado para incluir panel de carta en mano
+WINDOW_HEIGHT = 900  # Suficiente para todas las cartas
+GAME_AREA_WIDTH = 700  # Área del juego (izquierda)
+HAND_AREA_WIDTH = 700  # Área de la carta en mano (derecha)
+
+# Offset vertical entre cartas en una pila
+CARD_OFFSET_FACE_UP = 12  # Separación para cartas boca arriba
+CARD_OFFSET_FACE_DOWN = 2  # Separación para cartas boca abajo
 
 # Tiempos de animación en milisegundos
 ANIMATION_TIMES = {
-    'shuffle_wait': 2000,      # Tiempo de espera al mezclar
-    'flip_delay': 400,         # Tiempo antes de voltear carta
-    'auto_play_delay': 500,    # Tiempo entre movimientos automáticos
-    'place_card_delay': 300    # Tiempo al colocar carta
+    'shuffle_wait': 3000,       # Tiempo de animación de mezcla
+    'shuffle_iterations': 20,   # Número de iteraciones de mezcla visual
+    'shuffle_interval': 100,    # Intervalo entre iteraciones de mezcla
+    'flip_delay': 400,          # Tiempo antes de voltear carta
+    'auto_play_delay': 500,     # Tiempo entre movimientos automáticos
+    'place_card_delay': 300     # Tiempo al colocar carta
 }
